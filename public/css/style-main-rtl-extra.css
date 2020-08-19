@@ -66,7 +66,11 @@ html[dir="rtl"] .owl-carousel.owl-nav-top .owl-controls .owl-nav .owl-prev {
 html[dir="rtl"] .owl-carousel.owl-nav-top .owl-controls .owl-nav .owl-next {
   right: auto;
 }
-html[dir="rtl"] .blog-posts .post.style1 .entry-header .entry-date.entry-date-absolute {
+html[dir="rtl"]
+  .blog-posts
+  .post.style1
+  .entry-header
+  .entry-date.entry-date-absolute {
   left: auto;
 }
 html[dir="rtl"] .post .entry-title {
@@ -144,15 +148,23 @@ html[dir="rtl"] .cd-timeline-content::before {
     float: left;
     text-align: right;
   }
-  html[dir="rtl"] .cd-timeline-block:nth-child(even) .cd-timeline-content::before {
+  html[dir="rtl"]
+    .cd-timeline-block:nth-child(even)
+    .cd-timeline-content::before {
     right: auto;
     left: 100%;
     border-left-color: white;
   }
-  html[dir="rtl"] .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-read-more {
+  html[dir="rtl"]
+    .cd-timeline-block:nth-child(even)
+    .cd-timeline-content
+    .cd-read-more {
     float: left;
   }
-  html[dir="rtl"] .cd-timeline-block:nth-child(even) .cd-timeline-content .discription {
+  html[dir="rtl"]
+    .cd-timeline-block:nth-child(even)
+    .cd-timeline-content
+    .discription {
     right: auto;
     left: 122%;
   }
@@ -184,7 +196,14 @@ html[dir="rtl"] .vertical-nav .menuzord-menu li .indicator {
     border-right: 1px solid;
   }
 }
-html[dir="rtl"] .vertical-nav .menuzord-responsive .menuzord-menu li ul.dropdown li .indicator {
+html[dir="rtl"]
+  .vertical-nav
+  .menuzord-responsive
+  .menuzord-menu
+  li
+  ul.dropdown
+  li
+  .indicator {
   right: auto;
 }
 html[dir="rtl"] .vertical-nav .menuzord-menu ul.dropdown,

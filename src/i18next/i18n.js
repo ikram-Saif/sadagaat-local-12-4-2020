@@ -3,8 +3,8 @@ import Backend from "i18next-xhr-backend";
 import detector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 
-import translationEN from './locales/en/translation.json'
-import translationAR from './locales/ar/translation.json'
+import translationEN from "./locales/en/translation.json";
+import translationAR from "./locales/ar/translation.json";
 
 const availableLanguages = ["en", "ar"];
 
@@ -26,8 +26,8 @@ i18n
   .use(initReactI18next); // pass the i18n instance to react-i18next.
 
 i18n.use(initReactI18next).init({
-    //lng: 'en',
-  language:'en',
+  //lng: 'en',
+  language: "en",
   resources,
   initImmediate: true,
   fallbackLng: "en", // if user computer language is not on the list of available languages, than we will be using the fallback language specified earlier

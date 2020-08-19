@@ -216,7 +216,9 @@ body.dark {
 .dark .tab-content {
   border: 1px solid #333333;
 }
-.dark .header-nav .header-nav-wrapper.scroll-to-fixed-fixed.scroll-to-fixed-fixed {
+.dark
+  .header-nav
+  .header-nav-wrapper.scroll-to-fixed-fixed.scroll-to-fixed-fixed {
   border-bottom-color: #404040;
 }
 .dark .nav-tabs > li > a:hover,
@@ -272,7 +274,7 @@ body.dark {
   background-color: transparent !important;
 }
 .dark .panel-group.transparent .panel .panel-title a.active {
-  background-color: transparent!important;
+  background-color: transparent !important;
   border-bottom-color: transparent !important;
 }
 .dark .panel-group.transparent .panel .panel-title a.active:after {

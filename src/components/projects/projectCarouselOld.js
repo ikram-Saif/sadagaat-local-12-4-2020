@@ -6,16 +6,14 @@ import Carousel from "@brainhubeu/react-carousel";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import { withTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import {getNumberWithComma, getNumber,Precision} from '../events/getMonthName'
-import parse from 'html-react-parser';
-
-
+import { getNumber, Precision } from "../events/getMonthName";
+import parse from "html-react-parser";
 
 class ProjectSlider extends Component {
   constructor() {
     super();
     this.state = {
-      projects:[],
+      projects: [],
     };
   }
 
@@ -48,7 +46,7 @@ class ProjectSlider extends Component {
   render() {
     const { t } = this.props;
     const { projects } = this.state;
-    const projectProgressAlign = i18n.dir()==='rtl'?'right':'left'
+    const projectProgressAlign = i18n.dir() === "rtl" ? "right" : "left";
 
     return (
       <React.Fragment>
@@ -63,13 +61,11 @@ class ProjectSlider extends Component {
                       {t("Projects")}
                     </span>
                   </h2>
-               
                 </div>
               </div>
             </div>
             <div className="row-fluid">
               <Carousel
-              
                 slidesPerPage={3}
                 slidesPerScroll={1}
                 autoPlay={6000}
@@ -78,7 +74,7 @@ class ProjectSlider extends Component {
                 arrowLeft={
                   <i
                     className="fa fa-chevron-right fa-2x"
-                    style={{ margin:"10px" }}
+                    style={{ margin: "10px" }}
                   />
                 }
                 arrowRight={
@@ -112,113 +108,98 @@ class ProjectSlider extends Component {
                 }}
               >
                 {projects.map((project) => (
-                  <div className="item ml-5" key={project.id} >
-
-                      <div className="causes bg-white mb-30" key={project.id}>
-                      <Link to={'/single-projects/'+project.id}>
-                        <div className="thumb" 
-                        //style = {{ width:"500px"}}
+                  <div className="item ml-5" key={project.id}>
+                    <div className="causes bg-white mb-30" key={project.id}>
+                      <Link to={"/single-projects/" + project.id}>
+                        <div
+                          className="thumb"
+                          //style = {{ width:"500px"}}
                         >
-                            <img
-                              src={`${address()}projects/${project.id}/image`}
-                              // alt="project picture"
-                              className="img-fullwidth"
-                              width="240"
-                              height="320"
-                            />
-                        
-                      </div>
-                
-                      {/* <div
-                        style={{
-                          width: "15%",
-                          left: "25px",
-                          right: "25px",
-                          top: "8px",
-                          position: "absolute",
-                          rotation: 1 / 2 + 1 / 8,
-                        }}
-                      >
-                        <CircularProgressbar
-                          value={project.projectProgress}
-                          text={`${project.projectProgress}%`}
-                          background
-                          backgroundPadding={6}
-                          styles={buildStyles({
-                            rotation: 0.25,
-                            strokeLinecap: "butt",
-                            textSize: "26",
-                            pathTransitionDuration: 0.5,
-                            //textColor: "white",
-                            backgroundColor: "#066993",
-                            textColor: "#fff",
-                            pathColor: "#fff",
-                            trailColor: "transparent"
-                            //trailColor: "",
-                            //backgroundColor: '',
-                          })}
-                        />
-                      </div> */}
+                          <img
+                            src={`${address()}projects/${project.id}/image`}
+                            alt={project.name}
+                            className="img-fullwidth"
+                            width="240"
+                            height="320"
+                          />
+                        </div>
 
-                      <div className="causes-details clearfix border-bottom p-15 pt-15 pb-15">
-                        <ul className="list-inline font-16 font-weight-600 clearfix mb-5">
-                          <li className="pull-left font-weight-700 text-black-333 pr-0">
-                            {t("Raised")}
-                            <span className="text-theme-colored font-weight-700">
-                              { getNumber(project.raised)}
-                            </span>
-                          </li>
-                          <li className="pull-right font-weight-700 text-black-333 pr-0">
-                            {t("Goal")}
-                            <span className="text-theme-colored font-weight-700">
-                              { getNumber(project.goal)}
-                            </span>
-                          </li>
-                        </ul>
-                        <div className="progress-item mt-0">
-                          <div className="progress">
-                            <div
-                              data-percent={Precision(project.donationProgress)}
-                              className="progress-bar"
-                            >
+                        <div className="causes-details clearfix border-bottom p-15 pt-15 pb-15">
+                          <ul className="list-inline font-16 font-weight-600 clearfix mb-5">
+                            <li className="pull-left font-weight-700 text-black-333 pr-0">
+                              {t("Raised")}
+                              <span className="text-theme-colored font-weight-700">
+                                {getNumber(project.raised)}
+                              </span>
+                            </li>
+                            <li className="pull-right font-weight-700 text-black-333 pr-0">
+                              {t("Goal")}
+                              <span className="text-theme-colored font-weight-700">
+                                {getNumber(project.goal)}
+                              </span>
+                            </li>
+                          </ul>
+                          <div className="progress-item mt-0">
+                            <div className="progress">
+                              <div
+                                data-percent={Precision(
+                                  project.donationProgress
+                                )}
+                                className="progress-bar"
+                              >
                                 <span className="percent">
-                                          {Precision(project.donationProgress)}%
-                                          </span>
+                                  {Precision(project.donationProgress)}%
+                                </span>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                       
-                        <div className="progress-item mt-0">
-                        <p className = "" style = {{textAlign:projectProgressAlign}}>{t('Project Progress')}</p>
-                                <div className="progress">
-                                  <div data-percent={Precision(project.projectProgress)} className="progress-bar">  
-                                  <span className="percent">
-                                      {Precision(project.projectProgress)}%
-                                    </span>
-                                  </div>
-                                </div>
-                              </div>
-                        <h4 className="text-uppercase project-discription">
-                          <a href="">{project.name}</a>
-                        </h4>
-                        
-                        <p className="mt-20 project-discription">
-                          {parse(project.description)}</p>
 
-                        
-                        <Link
-                          to={"/projects/" + project.id}
-                          className="btn btn-default btn-theme-colored btn-xs font-16 mt-10"
-                          style = {{display:`
-                            ${project.projectProgress === 100 || project.donationProgress >= 100?'none':''}`
-                          }}
-                        >
-                          {t("Donate")}
-                        </Link>
-                      </div>
+                          <div className="progress-item mt-0">
+                            <p
+                              className=""
+                              style={{ textAlign: projectProgressAlign }}
+                            >
+                              {t("Project Progress")}
+                            </p>
+                            <div className="progress">
+                              <div
+                                data-percent={Precision(
+                                  project.projectProgress
+                                )}
+                                className="progress-bar"
+                              >
+                                <span className="percent">
+                                  {Precision(project.projectProgress)}%
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <h4 className="text-uppercase project-discription">
+                            <a href="">{project.name}</a>
+                          </h4>
+
+                          <p className="mt-20 project-discription">
+                            {parse(project.description)}
+                          </p>
+
+                          <Link
+                            to={"/projects/" + project.id}
+                            className="btn btn-default btn-theme-colored btn-xs font-16 mt-10"
+                            style={{
+                              display: `
+                            ${
+                              project.projectProgress === 100 ||
+                              project.donationProgress >= 100
+                                ? "none"
+                                : ""
+                            }`,
+                            }}
+                          >
+                            {t("Donate")}
+                          </Link>
+                        </div>
                       </Link>
                     </div>
-                    
                   </div>
                 ))}
               </Carousel>

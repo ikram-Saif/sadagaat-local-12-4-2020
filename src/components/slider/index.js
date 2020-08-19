@@ -3,21 +3,11 @@ import { Slide } from "react-slideshow-image";
 import slide1 from "../images/slide 1.jpg";
 import slide2 from "../images/slide 2.jpg";
 import slide3 from "../images/slide 3.jpg";
-//import work from "../images/work.jpg";
-import slide4 from "../images/slide 4.jpg"
-import slide5 from "../images/slide 5.jpg"
-import {Link } from 'react-router-dom'
+import slide4 from "../images/slide 4.jpg";
+import slide5 from "../images/slide 5.jpg";
+import { Link } from "react-router-dom";
 
-
-
-const slideImages = [
-  slide1, 
-  slide2,
-  slide3,
-  slide4,
-  slide5
-  
-];
+const slideImages = [slide1, slide2, slide3, slide4, slide5];
 
 const properties = {
   duration: 5000,
@@ -30,50 +20,48 @@ const properties = {
   //   console.log(`slide transition from ${oldIndex} to ${newIndex}`);
   // },
 };
-  const Slideshow = ()=>{
+const Slideshow = () => {
   return (
     <React.Fragment>
-    <div className="slide-container">
-      <Slide {...properties}>
+      <div className="slide-container">
+        <Slide {...properties}>
           {/* <div  className = "img-responsive" style={{ backgroundImage: `url(${slideImages[0]})`}}> */}
           <div>
-            <Link to = '/single-projects/1911'>
-          <img  src = {require('../images/slide 1.jpg')} />
-          </Link>
+            <Link to="/single-projects/1911">
+              <img src={slide1} alt="first slide" />
+            </Link>
           </div>
           {/* </div> */}
 
-     
           {/* <div  className = "img-responsive" style={{ backgroundImage: `url(${slideImages[1]})`, backgroundSize: 'auto'}}></div>
         </div> */}
-        <div>
-          <Link to = '/single-projects/2374'>
-          <img  src = {require('../images/slide 5.jpg')} 
-         />
-          </Link>
-          </div>
-    
-           {/* <div style={{ backgroundImage: `url(${slideImages[2]})`}} ></div> */}
-        <div>
-          <Link to = '/single-projects/2710'>
-          <img  src = {require('../images/slide 2.jpg')} />
-          </Link>
-          </div>
-          {/* <div  className = "img-responsive" style={{ backgroundImage: `url(${slideImages[3]})` }}></div> */}
           <div>
-            <Link to = '/single-projects/2054'>
-          <img  src = {require('../images/slide 3.jpg')} />
-          </Link>
-          </div>
-        
-          {/* <div  className = "img-responsive" style={{ backgroundImage: `url(${slideImages[3]})` }}></div> */}
-          <div>
-            <Link to = '/single-projects/2042'>
-              <img  src = {require('../images/slide 4.jpg')} />
+            <Link to="/single-projects/2374">
+              <img src={require("../images/slide 5.jpg")} />
             </Link>
           </div>
-      </Slide>
-    </div>
+
+          {/* <div style={{ backgroundImage: `url(${slideImages[2]})`}} ></div> */}
+          <div>
+            <Link to="/single-projects/2710">
+              <img src={require("../images/slide 2.jpg")} />
+            </Link>
+          </div>
+          {/* <div  className = "img-responsive" style={{ backgroundImage: `url(${slideImages[3]})` }}></div> */}
+          <div>
+            <Link to="/single-projects/2054">
+              <img src={require("../images/slide 3.jpg")} />
+            </Link>
+          </div>
+
+          {/* <div  className = "img-responsive" style={{ backgroundImage: `url(${slideImages[3]})` }}></div> */}
+          <div>
+            <Link to="/single-projects/2042">
+              <img src={require("../images/slide 4.jpg")} />
+            </Link>
+          </div>
+        </Slide>
+      </div>
     </React.Fragment>
   );
 };

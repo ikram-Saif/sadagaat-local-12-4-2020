@@ -38,118 +38,102 @@ import SingleEvent from "./components/events/single-event";
 import { useTranslation } from "react-i18next";
 import PlannedProjects from "./components/projects/plannedProjects";
 import FinishedProjects from "./components/projects/finished-project";
-import SinglNews from './components/news/single-news'
+import SinglNews from "./components/news/single-news";
 import singleNews from "./components/news/single-news";
-import Volunteers from './components/vlounteers/volunteersPage'
+import Volunteers from "./components/vlounteers/volunteersPage";
 import Registration from "./components/Login/Registration";
-
 
 function App() {
   const { i18n } = useTranslation();
   document.getElementById("direction").dir = i18n.dir();
 
   useEffect(() => {
-    if (i18n.dir() === "rtl") 
-    {
+    if (i18n.dir() === "rtl") {
       document.getElementById("bootstrp-file").href =
-      "css/bootstrap-rtl.min.css";
+        "css/bootstrap-rtl.min.css";
 
       document.getElementById("main-rtl").href = "css/style-main-rtl.css";
-      
+
       document.getElementById("main-rtl-extra").href =
         "css/style-main-rtl-extra.css";
-        
-    }
-    else if (i18n.dir() === "ltr") {
+    } else if (i18n.dir() === "ltr") {
       document.getElementById("bootstrp-file").href = "";
       document.getElementById("main-rtl").href = "";
       document.getElementById("main-rtl-extra").href = "";
     }
-  },i18n.language);
+  }, i18n.language);
 
   return (
-    <React.Fragment>
-    <Switch>
-      <div className="main-content">
-        {/* <Preload /> */}
-        <TopBar />
-        <MenuBar />
-        <Route exact path="/film">
-          <Film />
-        </Route>
+    <>
+      <Switch>
+        <div className="main-content">
+          {/* <Preload /> */}
+          <TopBar />
+          <MenuBar />
+          <Route exact path="/film">
+            <Film />
+          </Route>
 
-        <Route exact path="/pictures">
-          <Pictures />
-        </Route>
+          <Route exact path="/pictures">
+            <Pictures />
+          </Route>
 
-        <Route exact path="/calendar">
-          <Calendar />
-        </Route>
+          <Route exact path="/calendar">
+            <Calendar />
+          </Route>
 
-        <Route
-          exact
-          path="/event/:event_id"
-          component={SingleEvent}
-        />
-        <Route
-          exact
-          path="/news/:news_id"
-          component={singleNews}
-        />
+          <Route exact path="/event/:event_id" component={SingleEvent} />
+          <Route exact path="/news/:news_id" component={singleNews} />
 
-        <Route exact path="/water" component={Water} />
-        <Route exact path="/feeding" component={Feeding} />
-        <Route exact path="/health" component={Health} />
-        <Route exact path="/education" component={Education} />
-        <Route exact path="/news" component={News} />
-        <Route exact path="/sub_hubs" component={Sub_hubs} />
-        <Route path="/contact" component={Contact} />
-        <Route exact path="/projects" component={Projects_} />
-        <Route exact path="/donate/" component={Donate} />
-        <Route exact path="/projects/:project_id" component={DonateToProject} />
-        <Route exact path="/sub_hubs/:subhub_id" component={DonateToSubhub} />
-        <Route exact path="/hub/:hubId" component={DonateToHub} />
-        <Route exact path="/success-donate" component={SuccessDonate} />
-        <Route exact path="/failed-donate" component={FaildDonate} />
-        <Route path="/about" component={About} />
-        <Route exact path="/" component={Home} />
-        <PubliceRoute exact path="/login" component={Login} />
-        <Route exact path="/registration" component={Registration} />
-        <Route exact path="/forgot_password" component={ForgotPassword} />
-       
-        <Route exact path="/reset-password/:token" component={RestPassword} />
-        
-        <Route exact path="/volunteers" component={Volunteers} />
+          <Route exact path="/water" component={Water} />
+          <Route exact path="/feeding" component={Feeding} />
+          <Route exact path="/health" component={Health} />
+          <Route exact path="/education" component={Education} />
+          <Route exact path="/news" component={News} />
+          <Route exact path="/sub_hubs" component={Sub_hubs} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/projects" component={Projects_} />
+          <Route exact path="/donate/" component={Donate} />
+          <Route
+            exact
+            path="/projects/:project_id"
+            component={DonateToProject}
+          />
+          <Route exact path="/sub_hubs/:subhub_id" component={DonateToSubhub} />
+          <Route exact path="/hub/:hubId" component={DonateToHub} />
+          <Route exact path="/success-donate" component={SuccessDonate} />
+          <Route exact path="/failed-donate" component={FaildDonate} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/" component={Home} />
+          <PubliceRoute exact path="/login" component={Login} />
+          <Route exact path="/registration" component={Registration} />
+          <Route exact path="/forgot_password" component={ForgotPassword} />
 
-        <PrivateRoute exact path="/volunteerForm" component={VolunteerForm} />
-        <Route exact path="/verify" component={Email_verification} />
-       
-        <Route
-          exact
-          path="/single-projects/:project_id"
-          component={SingleProject2}
-        />
-        <Route
-          exact
-          path="/single-subhub/:subhub_id"
-          component={SingleSubhub}
-        />
-         <Route
-          exact
-          path="/planned-projects"
-          component={PlannedProjects}
-        />
+          <Route exact path="/reset-password/:token" component={RestPassword} />
 
-        <Route
-          exact
-          path="/complete-projects"
-          component={FinishedProjects}
-        />
-       <Become />
-        <Footer />
-      </div>
-    </Switch>
-    </React.Fragment>
+          <Route exact path="/volunteers" component={Volunteers} />
+
+          <PrivateRoute exact path="/volunteerForm" component={VolunteerForm} />
+          <Route exact path="/verify" component={Email_verification} />
+
+          <Route
+            exact
+            path="/single-projects/:project_id"
+            component={SingleProject2}
+          />
+          <Route
+            exact
+            path="/single-subhub/:subhub_id"
+            component={SingleSubhub}
+          />
+          <Route exact path="/planned-projects" component={PlannedProjects} />
+
+          <Route exact path="/complete-projects" component={FinishedProjects} />
+          <Become />
+          <Footer />
+        </div>
+      </Switch>
+    </>
   );
 }
 

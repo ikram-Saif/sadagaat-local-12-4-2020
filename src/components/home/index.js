@@ -9,22 +9,20 @@ import Video from "../../components/video";
 import Events from "../../components/events";
 import Parteners from "../parteners";
 
-
-
 function Home() {
   return (
     <React.Fragment>
-    <div className="main-content">
-      <Slider />
-      <Hubs />
-      <About />
-      <ProjectCarousel />
-      <Numbers />
-      <Photo />
-      <Video />
-      <Events />
-      <Parteners />
-    </div>
+      <div className="main-content">
+        <Slider />
+        <Hubs />
+        <About />
+        <ProjectCarousel />
+        <Numbers />
+        <Photo />
+        <Video />
+        <Events />
+        <Parteners />
+      </div>
     </React.Fragment>
   );
 }

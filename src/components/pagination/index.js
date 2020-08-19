@@ -1,5 +1,5 @@
-import React from 'react';
-import { NavLink , Link } from "react-router-dom";
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
   const pageNumbers = [];
@@ -7,25 +7,27 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
     pageNumbers.push(i);
   }
-  var Active = paginate === 1? ' active':''
   return (
     <React.Fragment>
-    <nav aria-label="Page navigation" style = {{position:"absolute",bottom:'0%'}}> 
-      <ul className="pagination">
-        {pageNumbers.map(number => (
-          <li key={number} 
-                  className={`page-item${number === 1 &&' active'}`}
-                  onClick={() => paginate(number)} 
-                  style = {{float:'left'}}>
-            <Link className={(paginate === number ? 'active ' : '') + 'page-link'}
+      <nav
+        aria-label="Page navigation"
+        style={{ position: "absolute", bottom: "0%" }}
+      >
+        <ul className="pagination">
+          {pageNumbers.map((number) => (
+            <li
+              key={number}
+              className={`page-item${number === 1 && " active"}`}
+              onClick={() => paginate(number)}
+              style={{ float: "left" }}
             >
-              {number}
-              
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
+              <NavLink className="page-link" actveClassName="active">
+                {number}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </React.Fragment>
   );
 };

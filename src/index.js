@@ -3,16 +3,13 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
-import DynamicScrollToTop from './DynamicScrollToTop'
-
+import DynamicScrollToTop from "./DynamicScrollToTop";
 
 ReactDOM.render(
   <BrowserRouter>
-  < DynamicScrollToTop />
-  
+    <DynamicScrollToTop />
 
     <App />
-    
   </BrowserRouter>,
   document.getElementById("root")
 );
