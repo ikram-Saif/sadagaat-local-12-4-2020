@@ -37,26 +37,8 @@ i18n.use(initReactI18next).init({
   interpolation: {
     escapeValue: false,
   },
-  /* order: [ 'cookie', 'localStorage', 'navigator', 'htmlTag', 'path', 'subdomain','querystring',],
 
-  // keys or params to lookup language from
-  //lookupQuerystring: 'lng',
-  lookupCookie: 'i18next',
-  lookupLocalStorage: 'i18nextLng',
-  lookupFromPathIndex: 0,
-  lookupFromSubdomainIndex: 0,
-
-  // cache user language on
-  caches: ['localStorage', 'cookie'],
-  excludeCacheFor: ['cimode'], // languages to not persist (cookie, localStorage)*/
-
-  // detection: {
-  //  order: ["cookies","path", "navigator"]
-  //},
-  backend: {
-    //loadPath: '/translation/{{lng}}.json',
-    //  allowMultiLoading: false
-  },
+  backend: {},
   react: {
     wait: true,
     useSuspense: false,

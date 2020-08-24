@@ -147,7 +147,6 @@ class DonateToHub extends Component {
                   </p>
                   <form
                     // data-toggle="validator"
-                    role="form"
                     id="popup_paypal_donate_form_onetime_recurring"
                     onSubmit={this.handleSubmite}
                   >

@@ -35,21 +35,11 @@ function Footer() {
                         <i className="fa fa-facebook" />
                       </a>
                     </li>
-                    {/* <li>
-                    <Link to="#">
-                      <i className="fa fa-twitter" />
-                    </Link>
-                  </li> */}
                     <li>
                       <a href="http://twitter.com/sadagaat " target="blank">
                         <i className="fa fa-twitter" />
                       </a>
                     </li>
-                    {/* <li>
-                    <Link to="#">
-                      <i className="fa fa-instagram" />
-                    </Link>
-                  </li> */}
                     <li>
                       <a
                         href="http://www.linkedin.com/pub/sadagaat-sudan/54/431/5b7"
