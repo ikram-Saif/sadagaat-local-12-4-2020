@@ -3,7 +3,7 @@ import LanguageSelector from "../../i18next/LanguageSelector";
 
 import { Link, NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import logo from "../images/Logo.png";
+// import Logo from "../images/logo.png";
 
 function MenuBar() {
   const { t } = useTranslation();
@@ -14,7 +14,7 @@ function MenuBar() {
           <div className="container">
             <nav id="menuzord-right" className="menuzord default no-bg">
               <a className="menuzord-brand pull-left flip" href="/">
-                <img src={require("../images/Logo.png")} alt="" />
+                <img src={require("../images/logo.png")} alt="" />
               </a>
               <ul className="menuzord-menu">
                 <li>
