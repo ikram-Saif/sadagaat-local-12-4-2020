@@ -123,7 +123,7 @@ function MenuBar() {
                 </li>
                 <li>
                   <NavLink
-                    className="nav-link btn btn-colored btn-flat btn-theme-green bg-theme-colored-darker4"
+                    className="nav-link btn btn-flat btn-theme-green bg-theme-colored-darker4 btn-colored"
                     to="/donate"
                   >
                     {t("Donate")}

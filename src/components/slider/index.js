@@ -26,7 +26,16 @@ const Slideshow = () => {
     <React.Fragment>
       <div className="slide-container">
         <Slide {...properties}>
-          {/* <div  className = "img-responsive" style={{ backgroundImage: `url(${slideImages[0]})`}}> */}
+          <LazyLoad once={true}>
+            <div>
+              <img src={require("../images/slide7.jpeg")} />
+            </div>
+          </LazyLoad>
+          <LazyLoad once={true}>
+            <div>
+              <img src={require("../images/slide8.jpeg")} />
+            </div>
+          </LazyLoad>
           <LazyLoad once={true}>
             <div>
               <Link to="/single-projects/3057">
